@@ -16,6 +16,7 @@ Modules (cool names):
 - humanize: Human-like mistake injection
 - landscape: Platform detection and categorization
 - vault: Database management
+- shuffle: Port management and service discovery
 
 Usage:
     from wickit import hideaway, knobs, alter-egos
@@ -169,6 +170,14 @@ from .shelf import (
     list_databases,
 )
 
+from .shuffle import (
+    ServiceRegistry,
+    PortShuffleError,
+    NoAvailablePortError,
+    find_available_port,
+    quick_start,
+)
+
 __version__ = "0.1.0"
 
 __all__ = [
@@ -287,4 +296,10 @@ __all__ = [
     "Transaction",
     "get_database",
     "init_database",
+    # shuffle
+    "ServiceRegistry",
+    "PortShuffleError",
+    "NoAvailablePortError",
+    "find_available_port",
+    "quick_start",
 ]
