@@ -172,9 +172,9 @@ from .shelf import (
 
 from .shuffle import (
     ServiceRegistry,
-    PortShuffleError,
+    ShuffleError,
     NoAvailablePortError,
-    find_available_port,
+    
     quick_start,
 )
 
@@ -298,8 +298,8 @@ __all__ = [
     "init_database",
     # shuffle
     "ServiceRegistry",
-    "PortShuffleError",
+    "ShuffleError",
     "NoAvailablePortError",
-    "find_available_port",
+    
     "quick_start",
 ]
