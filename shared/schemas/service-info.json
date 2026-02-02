@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ServiceInfo",
+  "description": "Service registration information shared across all wickit language implementations",
+  "type": "object",
+  "required": ["service_id", "port", "instance_id", "status"],
+  "properties": {
+    "service_id": {
+      "type": "string",
+      "description": "Unique service identifier (e.g., 'ralfie-api', 'djlab-backend')"
+    },
+    "port": {
+      "type": "integer",
+      "description": "Port number the service is running on",
+      "minimum": 1024,
+      "maximum": 65535
+    },
+    "instance_id": {
+      "type": "string",
+      "description": "Unique instance identifier (UUID)"
+    },
+    "pid": {
+      "type": "integer",
+      "description": "Process ID of the service"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["healthy", "degraded", "unhealthy", "starting", "stopping"],
+      "description": "Current health status of the service"
+    },
+    "project_context": {
+      "type": "object",
+      "description": "Project-specific context information",
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Project name"
+        },
+        "version": {
+          "type": "string",
+          "description": "Project version"
+        },
+        "environment": {
+          "type": "string",
+          "description": "Environment name (production, development, staging, local, mock)"
+        }
+      }
+    },
+    "verification_token": {
+      "type": "string",
+      "description": "Token for verifying service identity"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when service started"
+    },
+    "mdns_name": {
+      "type": "string",
+      "description": "Optional mDNS name (e.g., 'ralfie.local')"
+    }
+  }
+}

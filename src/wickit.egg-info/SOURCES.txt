@@ -8,6 +8,7 @@ src/wickit/autopilot.py
 src/wickit/blueprint.py
 src/wickit/cloudbridge.py
 src/wickit/dropzone.py
+src/wickit/flavour.py
 src/wickit/hideaway.py
 src/wickit/humanize.py
 src/wickit/knobs.py
